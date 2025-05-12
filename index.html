@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intro Interactiva</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body oncontextmenu="return false">
+
+  <div id="unsupported-browser">
+    <div>
+      <p>⚠️ Lo sentimos 😢</p>
+      <p>Tu navegador no es compatible con esta experiencia interactiva.</p>
+      <p>Por favor, usa uno de estos navegadores para verla correctamente:</p>
+      <ul style="list-style: none; padding: 0; margin-top: 10px;">
+        <li>🟢 Google Chrome</li>
+        <li>🟠 Mozilla Firefox</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="start-fallback">Toca para comenzar</div>
+
+  <video id="video0" autoplay playsinline muted preload="auto" controlsList="nodownload">
+    <source src="assets/video0.mp4" type="video/mp4" />
+  </video>
+
+  <video id="video1" playsinline muted preload="auto" controlsList="nodownload">
+    <source src="assets/video.mp4" type="video/mp4" />
+  </video>
+
+  <video id="video2" playsinline muted loop preload="auto" controlsList="nodownload">
+    <source src="assets/video2.mp4" type="video/mp4" />
+  </video>
+
+  <audio id="audio" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div id="bottom-bar">
+    <div class="buttons-container" id="buttons-container">
+      <div class="button-wrapper">
+        <a href="https://maps.app.goo.gl/oLKtXvRC2E6xRQrb9" target="_blank" class="inactive-link" tabindex="-1">
+          <img src="assets/salon.png" alt="Salón" class="button-img" />
+        </a>
+      </div>
+      <div class="button-wrapper">
+        <a href="https://api.whatsapp.com/send?phone=+59176190025&text=Hola%20quiero%20confirmar%20mi%20asistencia%20al%20cumple%20de%20Joaquin%20Emilio" target="_blank" class="inactive-link" tabindex="-1">
+          <img src="assets/botonasistencia.png" alt="asistencia" class="button-img" />
+        </a>
+      </div>
+      <div class="button-wrapper">
+        <img src="assets/repetir.png" alt="Repetir" class="button-img" id="repeat-button" />
+      </div>
+    </div>
+
+    <footer id="footer">
+      <p>© 2025 ARTS. Todos los derechos reservados.| <a href="https://www.facebook.com/InvitacionesDeBodaElAlto" target="_blank">Visítanos</a></p>
+    </footer>
+  </div>
+
+   <script src="js/scripts.js"></script>
+</body>
+</html>
