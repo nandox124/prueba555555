@@ -10,9 +10,9 @@ const repeatButton = document.getElementById("repeat-button");
 const footer = document.getElementById("footer");
 
 const userAgent = navigator.userAgent.toLowerCase();
-const isXiaomiBrowser = /miuibrowser|miui|miwebview/.test(userAgent);
+const isUnsupportedBrowser = /miuibrowser|miui|miwebview|heytap/.test(userAgent);
 
-if (isXiaomiBrowser) {
+if (isUnsupportedBrowser) {
   unsupported.style.display = "flex";
   video0.style.display = "none";
   video1.style.display = "none";
@@ -47,8 +47,8 @@ if (isXiaomiBrowser) {
 
   video0.addEventListener("ended", () => {
     video0.style.display = "none";
-    video1.style.display = "block";    // ✅ Mostrar video1
-    video1.style.opacity = 1;          // ✅ Asegurar visibilidad
+    video1.style.display = "block";
+    video1.style.opacity = 1;
   });
 
   video1.addEventListener("click", function playVideo1() {
@@ -67,7 +67,7 @@ if (isXiaomiBrowser) {
 
   video1.addEventListener("ended", () => {
     video2.currentTime = 0;
-    video2.style.display = "block";    // ✅ Mostrar video2
+    video2.style.display = "block";
     video2.play().then(() => {
       video2.style.opacity = 1;
       video1.style.opacity = 0;
