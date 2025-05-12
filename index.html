@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Intro Interactiva</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -22,17 +22,20 @@
 
   <div id="start-fallback">Toca para comenzar</div>
 
-  <video id="video0" autoplay playsinline muted preload="auto" controlsList="nodownload">
-    <source src="assets/video0.mp4" type="video/mp4" />
-  </video>
+  <!-- ✅ CONTENEDOR ENVOLVENTE PARA VIDEO -->
+  <div class="video-wrapper">
+    <video id="video0" autoplay playsinline muted preload="auto" controlsList="nodownload">
+      <source src="assets/video0.mp4" type="video/mp4" />
+    </video>
 
-  <video id="video1" playsinline muted preload="auto" controlsList="nodownload">
-    <source src="assets/video.mp4" type="video/mp4" />
-  </video>
+    <video id="video1" playsinline muted preload="auto" controlsList="nodownload">
+      <source src="assets/video.mp4" type="video/mp4" />
+    </video>
 
-  <video id="video2" playsinline muted loop preload="auto" controlsList="nodownload">
-    <source src="assets/video2.mp4" type="video/mp4" />
-  </video>
+    <video id="video2" playsinline muted loop preload="auto" controlsList="nodownload">
+      <source src="assets/video2.mp4" type="video/mp4" />
+    </video>
+  </div>
 
   <audio id="audio" loop preload="auto">
     <source src="assets/music.mp3" type="audio/mpeg" />
@@ -60,6 +63,6 @@
     </footer>
   </div>
 
-   <script src="js/scripts.js"></script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
