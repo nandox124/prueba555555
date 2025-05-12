@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html, body {
   width: 100%;
   height: 100%;
@@ -10,28 +11,39 @@ html, body {
   background: black;
   font-family: sans-serif;
 }
+
+/* ✅ Contenedor de los videos, para centrarlos y superponerlos */
+.video-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: grid;
+  place-items: center;
+}
+
+/* ✅ Videos superpuestos en el mismo lugar */
 video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 177.78vw; /* Relación 9:16 */
-  max-height: 100vh;
-  max-width: 56.25vh;
-  transform: translate(-50%, -50%);
+  z-index: 1;
+  aspect-ratio: 9 / 16;
+  height: 100%;
   object-fit: cover;
+  display: none;         /* ocultos por defecto */
+  opacity: 0;            /* invisibles por defecto */
+  transition: opacity 1s ease;
 }
-#video0 { z-index: 3; }
-#video1 { 
-  z-index: 2; 
-  cursor: pointer; 
-  transition: opacity 1s ease; 
+
+/* ✅ Solo el primer video visible al inicio */
+#video0 {
+  display: block;
+  opacity: 1;
+  z-index: 3;
 }
-#video2 { 
-  z-index: 1; 
-  opacity: 0; 
-  transition: opacity 1s ease; 
-}
+#video1 { z-index: 2; cursor: pointer; }
+#video2 { z-index: 1; }
 
 #bottom-bar {
   position: absolute;
@@ -44,6 +56,7 @@ video {
   z-index: 5;
   gap: 0;
 }
+
 .buttons-container {
   display: flex;
   justify-content: center;
@@ -66,6 +79,7 @@ video {
   visibility: visible;
   pointer-events: auto;
 }
+
 .button-wrapper {
   display: flex;
   flex-direction: column;
@@ -73,6 +87,7 @@ video {
   text-align: center;
   flex-shrink: 0;
 }
+
 .button-img {
   width: 60px;
   cursor: pointer;
@@ -102,6 +117,7 @@ video {
   line-height: 1.6;
   color: white;
 }
+
 #start-fallback {
   position: absolute;
   top: 0;
